@@ -57,7 +57,11 @@ export default
         if(id===2)
           this.$emit('changeSubmenu','Route');
         else
-            if(id===5)this.$emit('changeSubmenu','Stories');
+            if(id===5)
+              this.$emit('changeSubmenu','Stories');
+            else
+              if(id===1)
+                this.$emit('changeSubmenu','Home');
     }
   }
 }

@@ -13,6 +13,8 @@ import Main from "@/components/Main";
 import Route from '@/components/Route';
 import News from '@/components/News';
 import Stories from '@/components/Stories';
+import Feedback from '@/components/Feedback';
+import Home from '@/components/Home';
 export default {
   name: 'App',
   components: {
@@ -20,11 +22,13 @@ export default {
     Main,
     Route,
     News,
-    Stories
+    Stories,
+    Feedback,
+    Home
   },
   data(){
     return{
-      submenu:'Route'
+      submenu:'Home'
     }
   },
   methods:
@@ -32,7 +36,6 @@ export default {
         updateSubmenu(newUpdate)
         {
            this.submenu=newUpdate;
-
         }
 
       }

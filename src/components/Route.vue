@@ -21,7 +21,7 @@
       <option>300 lei</option>
     </select>
     <br>
-    <button id="add">Adaugă</button>
+    <button id="add">Caută</button>
   </form>
     <div id="preview">
       <h2>Date introduse:</h2>
