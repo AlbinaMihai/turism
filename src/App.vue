@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
-import Main from "@/components/Main";
-import Route from '@/components/Route';
-import News from '@/components/News';
-import Stories from '@/components/Stories';
+import Header from '@/components/pages/home/Header';
+import Main from "@/components/pages/home/Main";
+import Route from '@/components/pages/route/Route';
+import News from '@/components/pages/news/News';
+import Stories from '@/components/pages/story/Stories';
 import Feedback from '@/components/Feedback';
-import Home from '@/components/Home';
+import Home from '@/components/pages/home/Home';
 export default {
   name: 'App',
   components: {

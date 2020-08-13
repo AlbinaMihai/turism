@@ -6,8 +6,8 @@
 </template>
 <script>
 import Feedback from '@/components/Feedback';
-import blogStory from "@/components/blogStory";
-import ShittyStories from "@/components/ShittyStories";
+import blogStory from "@/components/pages/story/blogStory";
+import ShittyStories from "@/components/pages/story/ShittyStories";
 export  default {
   components:{
     Feedback,

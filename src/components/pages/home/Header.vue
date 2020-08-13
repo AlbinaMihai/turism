@@ -74,6 +74,13 @@ img
  height: 100%;
   width: 100%;
 }
+img:hover
+{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+
 td
 {
   position: relative;
