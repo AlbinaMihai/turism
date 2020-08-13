@@ -1,15 +1,20 @@
 <template>
 <div>
 <ul>
-  <li v-for="mainButton in mainButtons" :key="mainButton.id" v-on:click="mainButton.clickCount++"><p>{{mainButton.name}}</p></li>
+  <li v-for="mainButton in mainButtons" :key="mainButton.id" v-on:click="changeSubmenu(mainButton.id)"><p>{{mainButton.name}}</p></li>
 </ul>
-
 </div>
 </template>
 
 <script>
 export default
 {
+  props:{
+    submenu:
+        {
+          type:String
+        }
+  },
   data()
   {
    return{
@@ -18,29 +23,42 @@ export default
        {
          id:1,
          name:'Acasă',
-         link:'#home',
          clickCount:0
        },
        {
          id:2,
          name:'Trasee',
-         link:'#routes',
          clickCount:0
        },
        {
          id:3,
          name:'Cazări',
-         link:'#hotels',
          clickCount:0
        },
        {
          id:4,
          name:'Noutăți',
-         link:'#news',
          clickCount:0
+       },
+       {
+         id:5,
+         name:'Povestea ta',
+         clickCount: 0
        }
      ]
    }
+  },
+  methods:{
+    changeSubmenu(id){
+      if(id===4){
+        this.$emit('changeSubmenu','News');
+      }
+      else
+        if(id===2)
+          this.$emit('changeSubmenu','Route');
+        else
+            if(id===5)this.$emit('changeSubmenu','Stories');
+    }
   }
 }
 </script>

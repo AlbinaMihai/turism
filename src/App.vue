@@ -2,22 +2,40 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Main></Main>
-    <Questionnaire></Questionnaire>
+    <Main  v-bind:submenu="submenu" v-on:changeSubmenu="updateSubmenu($event)"></Main>
+    <component :is="submenu"></component>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
 import Main from "@/components/Main";
-import Questionnaire from "@/components/ Questionnaire";
+import Route from '@/components/Route';
+import News from '@/components/News';
+import Stories from '@/components/Stories';
 export default {
   name: 'App',
   components: {
     Header,
     Main,
-    Questionnaire
-  }
+    Route,
+    News,
+    Stories
+  },
+  data(){
+    return{
+      submenu:'Route'
+    }
+  },
+  methods:
+      {
+        updateSubmenu(newUpdate)
+        {
+           this.submenu=newUpdate;
+
+        }
+
+      }
 }
 </script>
 

@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <Questionnaire  v-bind:message="message" />
+    <h1>Bine ați venit</h1>
     <table>
       <tbody>
       <tr>
@@ -18,11 +18,7 @@
   </div>
 </template>
 <script>
-import Questionnaire from "@/components/ Questionnaire";
 export default {
-  components: {
-    Questionnaire
-  },
   data()
   {
     return {
@@ -64,6 +60,10 @@ export default {
 }
 </script>
 <style scoped>
+h1
+{
+  font-family: "Comic Sans MS",sans-serif;
+}
 table{
   position: relative;
   width: 100%;
