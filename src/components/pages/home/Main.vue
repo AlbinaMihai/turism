@@ -7,14 +7,11 @@
 </template>
 
 <script>
+import {store} from "@/store/store";
+
 export default
 {
-  props:{
-    submenu:
-        {
-          type:String
-        }
-  },
+
   data()
   {
    return{
@@ -50,18 +47,22 @@ export default
   },
   methods:{
     changeSubmenu(id){
-      if(id===4){
-        this.$emit('changeSubmenu','News');
-      }
+      if(id===4)
+       store.commit('changeSubmenu','News');
       else
         if(id===2)
-          this.$emit('changeSubmenu','Route');
+          store.commit('changeSubmenu','Route');
         else
             if(id===5)
-              this.$emit('changeSubmenu','Stories');
+              store.commit('changeSubmenu','Stories');
             else
               if(id===1)
-                this.$emit('changeSubmenu','Home');
+                store.commit('changeSubmenu','Home');
+    }
+  },
+  computed:{
+    submenu(){
+      return this.$store.state.submenu;
     }
   }
 }

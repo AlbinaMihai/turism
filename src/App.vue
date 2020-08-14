@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Main  v-bind:submenu="submenu" v-on:changeSubmenu="updateSubmenu($event)"></Main>
+    <Main></Main>
     <component :is="submenu"></component>
   </div>
 </template>
@@ -26,19 +26,12 @@ export default {
     Feedback,
     Home
   },
-  data(){
-    return{
-      submenu:'Home'
+  computed:{
+    submenu()
+    {
+      return this.$store.state.submenu;
     }
-  },
-  methods:
-      {
-        updateSubmenu(newUpdate)
-        {
-           this.submenu=newUpdate;
-        }
-
-      }
+  }
 }
 </script>
 
